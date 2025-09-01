@@ -307,8 +307,8 @@ class Model(LoadingSystem):
         displacement : ndarray
             List of displacement values.
         """
-        return integrate.cumtrapz(velocity, self.time, initial=0)
-
+        return integrate.cumulative_trapezoid(velocity, self.time, initial=0)
+        
     def _calculateDiscreteDisplacement(self, velocity):
         """
         Calculate displacement in a discrete way that returns an equal size
